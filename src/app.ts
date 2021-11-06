@@ -35,10 +35,6 @@ const fileStorage = multer.diskStorage({
       cb(null, "images/profile_images");
     }
   },
-
-  filename: function (req, file, cb) {
-    cb(null, uuidv4() + file.originalname);
-  },
 });
 
 app.use(express.json());
@@ -81,6 +77,3 @@ Mongoose.connect(MONGODB_URI)
   .catch((err) => {
     console.log(err);
   });
-function uuidv4() {
-  throw new Error("Function not implemented.");
-}

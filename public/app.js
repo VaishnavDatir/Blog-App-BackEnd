@@ -45,9 +45,6 @@ const fileStorage = multer_1.default.diskStorage({
             cb(null, "images/profile_images");
         }
     },
-    filename: function (req, file, cb) {
-        cb(null, uuidv4() + file.originalname);
-    },
 });
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
@@ -77,6 +74,3 @@ mongoose_1.default.connect(MONGODB_URI)
     .catch((err) => {
     console.log(err);
 });
-function uuidv4() {
-    throw new Error("Function not implemented.");
-}
